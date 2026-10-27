@@ -3,116 +3,606 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minha Loja Online</title>
+  <title>FastDesing Perifericos - Loja Gamer</title>
 
-  <!-- Bootstrap CSS CDN -->
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons CDN -->
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <style>
-    /* Ajustes finos de estilo */
-    .hero-carousel img {
-      max-height: 400px;
+    /* Estilos personalizados - Tema Roxo (Estilo Gamer/Moderno) */
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Faixa de aviso topo */
+    .top-bar {
+      background-color: #6f42c1;
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Navbar FastDesing style */
+    .navbar-store {
+      background-color: #1a1a1a !important;
+      border-bottom: 2px solid #6f42c1;
+    }
+    .navbar-store .navbar-brand {
+      color: #b19df1 !important;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+    .navbar-store .nav-link {
+      color: #ffffff !important;
+    }
+    .navbar-store .nav-link:hover {
+      color: #b19df1 !important;
+    }
+
+    /* Carrossel */
+    .hero-carousel .carousel-item img {
+      height: 380px;
       object-fit: cover;
+    }
+
+    /* Categorias */
+    .category-box {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      transition: all 0.3s ease;
+    }
+    .category-box:hover {
+      border-color: #6f42c1;
+      transform: translateY(-3px);
+    }
+    .category-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #2b2b2b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 8px auto;
+      color: #b19df1;
+    }
+
+    /* Cards de Produtos */
+    .product-card {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      color: #ffffff;
+      border-radius: 6px;
+      transition: border-color 0.2s;
+    }
+    .product-card:hover {
+      border-color: #6f42c1;
+    }
+    .product-card .card-img-top {
+      height: 180px;
+      object-fit: contain;
+      background-color: #222;
+      padding: 15px;
+      cursor: pointer;
+    }
+
+    /* Botões */
+    .btn-store {
+      background-color: #6f42c1;
+      color: #ffffff;
+      font-weight: 600;
+      border: none;
+    }
+    .btn-store:hover {
+      background-color: #59339d;
+      color: #ffffff;
+    }
+
+    /* Banners Promocionais */
+    .promo-banner {
+      background: linear-gradient(45deg, #1a1a1a, #231238);
+      border: 1px solid #6f42c1;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Seção de Benefícios */
+    .benefits-section {
+      background-color: #1a1a1a;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+    }
+    .benefit-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #6f42c1;
+      color: #b19df1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: #0d0d0d !important;
+      color: #b0b0b0;
+      border-top: 2px solid #222;
+    }
+    footer h6 {
+      color: #ffffff;
+    }
+
+    /* Modais Escuros */
+    .modal-content {
+      background-color: #1a1a1a;
+      color: #fff;
+      border: 1px solid #333;
+    }
+    .modal-header, .modal-footer {
+      border-color: #333;
     }
   </style>
 </head>
 <body>
 
   <!-- 1. FAIXA DE AVISO NO TOPO -->
-  <div class="bg-primary text-white text-center py-2 text-uppercase fw-bold small">
-    Frete grátis para todo o Brasil nas compras acima de R$ 199,00!
+  <div class="top-bar text-center py-2 text-uppercase">
+    <i class="bi bi-truck me-2"></i> Frete Grátis nas compras acima de R$ 85
   </div>
 
   <!-- 2. NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-store sticky-top shadow">
     <div class="container">
-      <!-- Logo -->
-      <a class="navbar-brand fw-bold" href="#">MinhaLoja</a>
+      <a class="navbar-brand fs-4" href="#"><i class="bi bi-controller me-2"></i>FastDesing Perifericos</a>
 
-      <!-- Botão Hambúrguer para Celular -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Alternar navegação">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <div class="d-flex align-items-center d-lg-none ms-auto me-2">
+        <a href="#" class="btn btn-outline-light position-relative me-2 border-0">
+          <i class="bi bi-cart3 fs-5"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-purple" style="background-color: #6f42c1;">2</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
 
-      <!-- Conteúdo do Menu -->
-      <div class="collapse navbar-collapse mt-2 mt-lg-0" id="navbarContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-medium">
           <li class="nav-item">
             <a class="nav-link active" href="#">Início</a>
           </li>
-          <!-- Dropdown Categorias -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categorias
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Filtros
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Eletrônicos</a></li>
-              <li><a class="dropdown-item" href="#">Roupas</a></li>
-              <li><a class="dropdown-item" href="#">Acessórios</a></li>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="#">Mouses Gamer</a></li>
+              <li><a class="dropdown-item" href="#">Teclados Mecânicos</a></li>
+              <li><a class="dropdown-item" href="#">Headsets</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Ver todas</a></li>
+              <li><a class="dropdown-item" href="#">Todos os Produtos</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Ofertas</a>
+            <a class="nav-link" href="#">Monte seu Setup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-purple fw-bold" style="color: #b19df1 !important;" href="#">Ofertas do Dia</a>
           </li>
         </ul>
 
-        <!-- Busca (em linha própria no celular) -->
-        <form class="d-flex w-100 w-lg-auto me-lg-3 mb-2 mb-lg-0" role="search">
-          <input class="form-control me-2" type="search" placeholder="Buscar produtos..." aria-label="Buscar">
-          <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
+        <form class="d-flex my-2 my-lg-0 me-lg-3 flex-grow-1" role="search">
+          <div class="input-group">
+            <input class="form-control border-secondary" type="search" placeholder="Busque por mouse...">
+            <button class="btn btn-store" type="submit"><i class="bi bi-search"></i></button>
+          </div>
         </form>
 
-        <!-- Carrinho com Badge -->
-        <div class="d-flex justify-content-end">
-          <a href="#" class="btn btn-primary position-relative">
-            <i class="bi bi-cart3"></i> Carrinho
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              3
-            </span>
+        <div class="d-none d-lg-flex align-items-center">
+          <a href="#" class="btn btn-dark position-relative border border-secondary">
+            Carrinho <i class="bi bi-cart3" style="color: #b19df1;"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background-color: #6f42c1;">0</span>
           </a>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- 3. CARROSSEL (3 SLIDES) -->
-  <section class="hero-carousel mb-5">
-    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  <main class="container my-4">
+
+    <!-- 3. CARROSSEL DE BANNERS -->
+    <section class="mb-5">
+      <div id="carouselStore" class="carousel slide hero-carousel shadow" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselStore" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#carouselStore" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#carouselStore" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner rounded border border-secondary">
+          <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Setup Gamer">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2">
+              <h5>Novos Mouses de Alta DPI</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Teclados e Mouses">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2">
+              <h5>Teclados Duráveis</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Hardware">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2">
+              <h5>Monte Seu Setup Completo Com Frete Gratis</h5>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselStore" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselStore" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="https://placehold.co/1200x400/007bff/ffffff?text=Grandes+Ofertas+de+Verão" class="d-block w-100" alt="Slide 1">
+    </section>
+
+    <!-- 4. CATEGORIAS -->
+    <section class="mb-5">
+      <h5 class="fw-bold mb-3 border-start border-4 ps-2" style="border-color: #6f42c1 !important;">Categorias em Destaque</h5>
+      <div class="row g-3 text-center">
+        <div class="col-4 col-lg-2">
+          <div class="category-box p-3 rounded h-100">
+            <div class="category-circle"><i class="bi bi-mouse2 fs-3"></i></div>
+            <span class="small fw-semibold text-white">Mouses</span>
+          </div>
         </div>
-        <div class="carousel-item">
-          <img src="https://placehold.co/1200x400/28a745/ffffff?text=Lançamentos+Exclusivos" class="d-block w-100" alt="Slide 2">
+        <div class="col-4 col-lg-2">
+          <div class="category-box p-3 rounded h-100">
+            <div class="category-circle"><i class="bi bi-keyboard fs-3"></i></div>
+            <span class="small fw-semibold text-white">Teclados</span>
+          </div>
         </div>
-        <div class="carousel-item">
-          <img src="https://placehold.co/1200x400/dc3545/ffffff?text=Até+50%+OFF+em+Eletrônicos" class="d-block w-100" alt="Slide 3">
+        <div class="col-4 col-lg-2">
+          <div class="category-box p-3 rounded h-100">
+            <div class="category-circle"><i class="bi bi-headset fs-3"></i></div>
+            <span class="small fw-semibold text-white">Headsets</span>
+          </div>
+        </div>
+        <div class="col-4 col-lg-2">
+          <div class="category-box p-3 rounded h-100">
+            <div class="category-circle"><i class="bi bi-gpu-card fs-3"></i></div>
+            <span class="small fw-semibold text-white">Componentes</span>
+          </div>
+        </div>
+        <div class="col-4 col-lg-2">
+          <div class="category-box p-3 rounded h-100">
+            <div class="category-circle"><i class="bi bi-display fs-3"></i></div>
+            <span class="small fw-semibold text-white">Monitores</span>
+          </div>
+        </div>
+        <div class="col-4 col-lg-2">
+          <div class="category-box p-3 rounded h-100">
+            <div class="category-circle"><i class="bi bi-pc-display fs-3"></i></div>
+            <span class="small fw-semibold text-white">Outros</span>
+          </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Próximo</span>
-      </button>
+    </section>
+
+    <!-- 5. DESTAQUES -->
+    <section class="mb-5">
+      <h5 class="fw-bold mb-3 border-start border-4 ps-2" style="border-color: #6f42c1 !important;">Mouses Gamer em Destaque</h5>
+      <div class="row g-3">
+        
+        <!-- Produto 1 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="product-card p-2 h-100 d-flex flex-column">
+            <div class="position-relative">
+              <span class="badge position-absolute top-0 start-0 m-2" style="background-color: #6f42c1;">Promoção</span>
+              <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=400&q=80" class="card-img-top rounded" alt="Mouse Gamer 1" data-bs-toggle="modal" data-bs-target="#modalProduto1">
+            </div>
+            <div class="card-body px-2 pt-3 d-flex flex-column justify-content-between">
+              <div>
+                <h6 class="fw-semibold text-white">Mouse Gamer 1</h6>
+                <div style="color: #b19df1; text-decoration: line-through; text-decoration-color: red;">R$ 159,90</div>
+                <div class="fw-bold fs-5" style="color: #b19df1;">R$ 134,90 <span class="fs-6 text-muted fw-normal">à vista</span></div>
+              </div>
+              <button class="btn btn-store w-100 mt-3"><i class="bi bi-cart-plus me-1"></i> Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="product-card p-2 h-100 d-flex flex-column">
+            <div class="position-relative">
+              <span class="badge position-absolute top-0 start-0 m-2" style="background-color: #6f42c1;">Promoção</span>
+              <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=400&q=80" class="card-img-top rounded" alt="Mouse Gamer 2" data-bs-toggle="modal" data-bs-target="#modalProduto2">
+            </div>
+            <div class="card-body px-2 pt-3 d-flex flex-column justify-content-between">
+              <div>
+                <h6 class="fw-semibold text-white">Mouse Gamer 2</h6>
+                <div style="color: #b19df1; text-decoration: line-through; text-decoration-color: red;">R$ 199,90</div>
+                <div class="fw-bold fs-5" style="color: #b19df1;">R$ 149,90 <span class="fs-6 text-muted fw-normal">à vista</span></div>
+              </div>
+              <button class="btn btn-store w-100 mt-3"><i class="bi bi-cart-plus me-1"></i> Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="product-card p-2 h-100 d-flex flex-column">
+            <div class="position-relative">
+              <span class="badge position-absolute top-0 start-0 m-2" style="background-color: #6f42c1;">Promoção</span>
+              <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=400&q=80" class="card-img-top rounded" alt="Mouse Gamer 3" data-bs-toggle="modal" data-bs-target="#modalProduto3">
+            </div>
+            <div class="card-body px-2 pt-3 d-flex flex-column justify-content-between">
+              <div>
+                <h6 class="fw-semibold text-white">Teclado 1</h6>
+                <div style="color: #b19df1; text-decoration: line-through; text-decoration-color: red;">R$ 229,90</div>
+                <div class="fw-bold fs-5" style="color: #b19df1;">R$ 159,90 <span class="fs-6 text-muted fw-normal">à vista</span></div>
+              </div>
+              <button class="btn btn-store w-100 mt-3"><i class="bi bi-cart-plus me-1"></i> Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produto 4 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="product-card p-2 h-100 d-flex flex-column">
+            <div class="position-relative">
+              <span class="badge position-absolute top-0 start-0 m-2" style="background-color: #6f42c1;">Promoção</span>
+              <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=400&q=80" class="card-img-top rounded" alt="Mouse Gamer 4" data-bs-toggle="modal" data-bs-target="#modalProduto4">
+            </div>
+            <div class="card-body px-2 pt-3 d-flex flex-column justify-content-between">
+              <div>
+                <h6 class="fw-semibold text-white">Monitor 1</h6>
+                <div style="color: #b19df1; text-decoration: line-through; text-decoration-color: red;">R$ 2249,90</div>
+                <div class="fw-bold fs-5" style="color: #b19df1;">R$ 1199,90 <span class="fs-6 text-muted fw-normal">à vista</span></div>
+              </div>
+              <button class="btn btn-store w-100 mt-3"><i class="bi bi-cart-plus me-1"></i> Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. DOIS BANNERS LADO A LADO -->
+    <section class="mb-5">
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <div class="promo-banner rounded p-4 text-center">
+            <div>
+              <h5 class="fw-bold mb-1" style="color: #b19df1;">MONTE SEU SETUP GAMER</h5>
+              <p class="small mb-0" style="color: white;">Ferramenta exclusiva com compatibilidade garantida</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="promo-banner rounded p-4 text-center">
+            <div>
+              <h5 class="fw-bold mb-1" style="color: #b19df1;">SETUP DA SEMANA</h5>
+              <p class="small mb-0" style="color: white;">Até 40% de desconto</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. BENEFÍCIOS EM 3 COLUNAS -->
+    <section class="benefits-section mb-5 py-4 rounded">
+      <div class="container">
+        <div class="row g-4 text-center text-md-start">
+          <div class="col-12 col-md-4 d-flex align-items-center justify-content-center justify-content-md-start">
+            <div class="benefit-icon me-3"><i class="bi bi-truck fs-5"></i></div>
+            <div>
+              <h6 class="fw-bold mb-0 text-white">Entrega em Todo o Brasil</h6>
+              <small class="fw-bold mb-1" style="color: #b19df1;">Parcerias logísticas velozes e seguras</small>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 d-flex align-items-center justify-content-center justify-content-md-start">
+            <div class="benefit-icon me-3"><i class="bi bi-shield-check fs-5"></i></div>
+            <div>
+              <h6 class="fw-bold mb-0 text-white">Garantia FastDesing</h6>
+              <small class="fw-bold mb-1" style="color: #b19df1;">Produtos originais com nota fiscal</small>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 d-flex align-items-center justify-content-center justify-content-md-start">
+            <div class="benefit-icon me-3"><i class="bi bi-credit-card fs-5"></i></div>
+            <div>
+              <h6 class="fw-bold mb-0 text-white">Facilidade no Pagamento</h6>
+              <small class="fw-bold mb-1" style="color: #b19df1;">Desconto especial no PIX ou boleto</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. NEWSLETTER -->
+    <section class="mb-5 text-center bg-dark p-4 rounded border border-secondary">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+          <h5 class="fw-bold text-white mb-2"><i class="bi bi-envelope-paper me-2" style="color: #b19df1;"></i> Receba Ofertas Exclusivas</h5>
+          <p class="fw-bold mb-2" style="color: #b19df1;">Cadastre seu e-mail para não perder nenhuma promoção.</p>
+          <div class="input-group mt-3">
+            <input type="email" class="form-control bg-secondary text-white border-0" placeholder="Digite seu melhor e-mail...">
+            <button class="btn btn-store px-4" type="button">Assinar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 9. RODAPÉ EM 4 COLUNAS -->
+  <footer class="pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold mb-3" style="color: #b19df1;">INSTITUCIONAL</h6>
+          <ul class="list-unstyled small text-muted">
+            <li class="mb-2"><a href="#" style="color: #b19df1;">Quem Somos</a></li>
+            <li class="mb-2"><a href="#" style="color: #b19df1;">Política de Privacidade</a></li>
+            <li class="mb-2"><a href="#" style="color: #b19df1;">Termos e Condições</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold mb-3" style="color: #b19df1;">ATENDIMENTO</h6>
+          <ul class="list-unstyled small text-muted">
+            <li class="mb-2"><a href="#" style="color: #b19df1;">Central de Suporte</a></li>
+            <li class="mb-2"><a href="#" style="color: #b19df1;">Rastrear Pedido</a></li>
+            <li class="mb-2"><a href="#" style="color: #b19df1;">Trocas e Devoluções</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold mb-3" style="color: #b19df1;">REDES SOCIAIS</h6>
+          <div class="d-flex gap-3 fs-5">
+            <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-twitch"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold mb-3" style="color: #b19df1;">PAGAMENTO SEGURO</h6>
+          <div class="d-flex flex-wrap gap-2 text-muted small">
+            <span class="badge bg-secondary">PIX</span>
+            <span class="badge bg-secondary">Boleto</span>
+            <span class="badge bg-secondary">Visa</span>
+            <span class="badge bg-secondary">Mastercard</span>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary my-4">
+      <div class="text-center text-muted small">
+        &copy; 2026 FastDesing Perifericos. Todos os direitos reservados.
+      </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- 4. CATEGORIAS (6/linha desktop, 3/linha celular) -->
-  <section class="container mb-5">
-    <h4 class="text-center mb-4 fw-bold">Navegue por Categorias</h4>
-    <div class="row g-3 text-center">
-      <div class="col-4 col-lg-2">
-        <div class="card h-
+ <!-- Modal do Produto 1 -->
+<div class="modal fade" id="modalProduto1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold text-white">Detalhes do Produto</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body row">
+        <div class="col-md-6 d-flex align-items-center justify-content-center bg-dark p-3 rounded">
+          <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7" class="img-fluid rounded" alt="Mouse Ampliado 1">
+        </div>
+        <div class="col-md-6 mt-3 mt-md-0 d-flex flex-column justify-content-between">
+          <div>
+            <span class="badge mb-2" style="background-color: #6f42c1;">Promoção</span>
+            <h4 class="fw-bold text-white">Mouse Gamer 1</h4>
+            <p class="fw-bold" style="color: #b19df1;">Um produto que você nunca se arrependerá de ter adquirido em nossas lojas, ele é durável e de uma qualidade magnífica</p>
+            <div class="fw-bold" style="color: #b19df1;">De R$ 159,90</div>
+            <h3 class="fw-bold" style="color: #b19df1;">Por R$ 134,90 <span class="fs-6 text-muted fw-normal">à vista no PIX</span></h3>
+          </div>
+          <button class="btn btn-store w-100 mt-4"><i class="bi bi-cart-plus me-1"></i> Comprar Agora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- Modal do Produto 2 -->
+<div class="modal fade" id="modalProduto2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold text-white">Detalhes do Produto</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body row">
+        <div class="col-md-6 d-flex align-items-center justify-content-center bg-dark p-3 rounded">
+          <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46" class="img-fluid rounded" alt="Mouse Ampliado 2">
+        </div>
+        <div class="col-md-6 mt-3 mt-md-0 d-flex flex-column justify-content-between">
+          <div>
+            <span class="badge mb-2" style="background-color: #6f42c1;">Promoção</span>
+            <h4 class="fw-bold text-white">Mouse Gamer 2</h4>
+            <p class="fw-bold" style="color: #b19df1;">Um produto que você nunca se arrependerá de ter adquirido em nossas lojas, ele é durável e de uma qualidade magnífica</p>
+            <div class="fw-bold" style="color: #b19df1;">De R$ 199,90</div>
+            <h3 class="fw-bold" style="color: #b19df1;">Por R$ 149,90 <span class="fs-6 text-muted fw-normal">à vista no PIX</span></h3>
+          </div>
+          <button class="btn btn-store w-100 mt-4"><i class="bi bi-cart-plus me-1"></i> Comprar Agora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal do Produto 3 -->
+<div class="modal fade" id="modalProduto3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold text-white">Detalhes do Produto</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body row">
+        <div class="col-md-6 d-flex align-items-center justify-content-center bg-dark p-3 rounded">
+          <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef" class="img-fluid rounded" alt="Mouse Ampliado 3">
+        </div>
+        <div class="col-md-6 mt-3 mt-md-0 d-flex flex-column justify-content-between">
+          <div>
+            <span class="badge mb-2" style="background-color: #6f42c1;">Promoção</span>
+            <h4 class="fw-bold text-white">Teclado 1</h4>
+            <p class="fw-bold" style="color: #b19df1;">Um produto que você nunca se arrependerá de ter adquirido em nossas lojas, ele é durável e de uma qualidade magnífica</p>
+            <div class="fw-bold" style="color: #b19df1;">De R$ 229,90</div>
+            <h3 class="fw-bold" style="color: #b19df1;">Por R$ 159,90 <span class="fs-6 text-muted fw-normal">à vista no PIX</span></h3>
+          </div>
+          <button class="btn btn-store w-100 mt-4"><i class="bi bi-cart-plus me-1"></i> Comprar Agora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal do Produto 4 -->
+<div class="modal fade" id="modalProduto4" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold text-white">Detalhes do Produto</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body row">
+        <div class="col-md-6 d-flex align-items-center justify-content-center bg-dark p-3 rounded">
+          <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575" class="img-fluid rounded" alt="Mouse Ampliado 4">
+        </div>
+        <div class="col-md-6 mt-3 mt-md-0 d-flex flex-column justify-content-between">
+          <div>
+            <span class="badge mb-2" style="background-color: #6f42c1;">Promoção</span>
+            <h4 class="fw-bold text-white">Monitor 1</h4>
+            <p class="fw-bold" style="color: #b19df1;">Um produto que você nunca se arrependerá de ter adquirido em nossas lojas, ele é durável e de uma qualidade magnífica</p>
+            <div class="fw-bold" style="color: #b19df1;">De R$ 2249,90</div>
+            <h3 class="fw-bold" style="color: #b19df1;">Por R$ 1199,90 <span class="fs-6 text-muted fw-normal">à vista no PIX</span></h3>
+          </div>
+          <button class="btn btn-store w-100 mt-4"><i class="bi bi-cart-plus me-1"></i> Comprar Agora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+```
